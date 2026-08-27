@@ -6,3 +6,5 @@ look at: http://localhost:8000/
 
 python run_full_study.py
 python export_app_data.py
+
+open index.html for the visualizer
