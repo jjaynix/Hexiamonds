@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hexiamond Wallpaper Group Visualizer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2">
+</head>
+<body>
+    <div class="app-container">
+
+        <aside class="sidebar glass">
+            <div class="sidebar-header">
+                <h1>hexiamonds as prototiles of wallpaper patterns
+                </h1>balaoing, pineda, sarmiento
+                <p>highest-symmetry groups found per shape, screened across all 17 wallpaper groups</p>
+            </div>
+
+            <div class="controls-section">
+                <h3>Select Hexiamond</h3>
+                <div class="hex-list" id="hex-list"></div>
+            </div>
+
+            <div class="controls-section" id="group-select-section" style="display:none">
+                <h3>Valid Wallpaper Groups</h3>
+                <div class="hex-list" id="group-list"></div>
+            </div>
+
+            <div class="controls-section">
+                <h3>Lattice</h3>
+                <label class="legend-item">
+                    <input type="checkbox" id="toggle-lattice" checked>
+                    Show triangular grid
+                </label>
+                <label class="legend-item" style="margin-top:8px">
+                    <input type="checkbox" id="toggle-center" checked>
+                    Show rotation centers
+                </label>
+            </div>
+
+            <div class="controls-section animation-controls">
+                <h3>Animation Progress</h3>
+                <input type="range" id="timeline" min="0" max="1" step="0.001" value="0">
+                <div class="playback-buttons">
+                    <button id="btn-play" class="btn primary">Play</button>
+                    <button id="btn-reset" class="btn">Reset</button>
+                </div>
+                <div class="legend" id="legend"></div>
+                <div class="insight" id="insight">Select a shape to see its symmetry summary.</div>
+            </div>
+        </aside>
+
+        <main class="canvas-container">
+            <div class="viz-panel">
+                <div class="viz-title">Hexiamond Tiling</div>
+                <svg id="canvas-hex" viewBox="-10 -10 20 20" preserveAspectRatio="xMidYMid meet">
+                    <g id="hex-trans-layer"></g>
+                    <g id="hex-rot-layer"></g>
+                    <g id="lattice-layer-hex"></g>
+                    <g id="center-layer-hex"></g>
+                </svg>
+            </div>
+        </main>
+    </div>
+
+    <script src="data.js?v=2"></script>
+    <script src="app.js?v=4"></script>
+</body>
+</html>
